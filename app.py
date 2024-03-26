@@ -4,12 +4,14 @@ import mediapipe as mp
 import numpy as np
 import pickle
 
-# Load your model
+
+# Load model
 @st.cache_resource
 def load_model():
     model1_dict = pickle.load(open('./model.p', 'rb'))
     model1 = model1_dict['model']
     return model1
+
 
 model = load_model()
 st.title("Webcam Live Feed")
@@ -24,6 +26,7 @@ hands = mp_hands.Hands(static_image_mode=True, min_detection_confidence=0.3, max
 labels_dict = {0: 'N', 1: 'O', 2: 'A', 3: 'H'}
 
 camera = cv2.VideoCapture(1)
+
 
 def process_frame(frame, model):
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
@@ -77,6 +80,7 @@ def process_frame(frame, model):
                         cv2.LINE_AA)
 
     return frame
+
 
 while run:
     _, frame = camera.read()
