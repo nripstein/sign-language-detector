@@ -1,5 +1,5 @@
 streamlit==1.32.2
-pencv-python-headless
+opencv-python-headless
 # opencv-python-headless==3.4.11.45
 numpy==1.26.4
 mediapipe
