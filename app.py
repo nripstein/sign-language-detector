@@ -5,6 +5,11 @@ import numpy as np
 import pickle
 
 
+print(st.__version__)
+print(cv2.__version__)
+print(mp.__version__)
+
+
 # Load model
 @st.cache_resource
 def load_model():
@@ -25,7 +30,7 @@ mp_drawing_styles = mp.solutions.drawing_styles
 hands = mp_hands.Hands(static_image_mode=True, min_detection_confidence=0.3, max_num_hands=1)
 labels_dict = {0: 'N', 1: 'O', 2: 'A', 3: 'H'}
 
-camera = cv2.VideoCapture(1)
+camera = cv2.VideoCapture(0)
 
 
 def process_frame(frame, model):
