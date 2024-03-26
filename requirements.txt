@@ -4,4 +4,5 @@ opencv-python-headless
 numpy==1.26.4
 mediapipe
 protobuf<4,>==3.11
+scikit-learn
 # mediapipe~=0.8.6
